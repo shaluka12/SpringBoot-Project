@@ -41,5 +41,10 @@ public class StudentServiceImpl implements StudentService {
     public void UpdateStudent(Student student) {
         repository.save(student);
     }
+
+    @Override
+    public List<Student> findByName(String name) {
+        return repository.findByName(name);
+    }
 }
 

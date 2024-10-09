@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class StudentController {
 
     @Autowired
@@ -29,6 +30,10 @@ public class StudentController {
     @PutMapping
     public void  UpdateStudent(@RequestBody Student student){
         service.addStudent(student);
+    }
+    @GetMapping("/find-by-name/{name}")
+    public List<Student> findByName(@PathVariable String name){
+        return service.findByName(name);
     }
 }
 
